@@ -15,7 +15,7 @@ def dfs(node):
         infect.append(node)
     visit[node] = True
     for i in node_dict[node]:
-        if visit[i] == False:
+        if not visit[i]:
             dfs(i)
 
 
