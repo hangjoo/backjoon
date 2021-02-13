@@ -6,10 +6,12 @@ for pos in pos_list:
     for i in range(0, 3, 2):
         if pos[i] == 1 or pos[i] == 2:
             if pos[i + 1] > max_x:
-                max_x = pos[i + 1] + 1
+                max_x = pos[i + 1]
         if pos[i] == 3 or pos[i] == 4:
             if pos[i + 1] > max_y:
-                max_y = pos[i + 1] + 1
+                max_y = pos[i + 1]
+max_x += 1
+max_y += 1
 
 
 def pos_tranpose(pos_list, max_x, max_y):
