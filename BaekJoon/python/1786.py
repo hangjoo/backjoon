@@ -6,7 +6,8 @@ def getPi(p):
         while j > 0 and p[i] != p[j]:
             j = pi[j - 1]
         if p[i] == p[j]:
-            pi[i] = j = j + 1
+            j += 1
+            pi[i] = j
     return pi
 
 
@@ -16,7 +17,7 @@ def kmp(s, p):
     n, m = len(s), len(p)
     j = 0
     for i in range(n):
-        while j > 0 and s[i] != [j]:
+        while j > 0 and s[i] != p[j]:
             j = pi[j - 1]
         if s[i] == p[j]:
             if j == m - 1:
@@ -30,7 +31,7 @@ def kmp(s, p):
 t = input()
 p = input()
 
-ans = kmp(t, p)
-print(len(ans))
-for i in ans:
+ret = kmp(t, p)
+print(len(ret))
+for i in ret:
     print(i + 1)
