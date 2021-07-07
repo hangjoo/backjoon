@@ -1,8 +1,10 @@
 n = int(input())
 
+# init
 count = [[-1 for _ in range(10)] for _ in range(n)]
 count[0] = [1 for _ in range(10)]
 
+# bottom up DP
 for i in range(1, n):
     for j in range(10):
         if j == 0:
